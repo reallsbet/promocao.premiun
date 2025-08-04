@@ -1,0 +1,436 @@
+* {
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0; /* Garante nenhum espaçamento automático */
+    margin: 0;
+    padding: 0;
+    padding-bottom: 70px;
+    background-color: #160f20;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+.login-header {
+    background-color: #241f29;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    height: 55px;
+    position: static;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.header-logo {
+    max-height: 70px;
+    max-width: 240px;
+    width: auto;
+}
+
+.saldo-container {
+    background-color: #160f20;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+    margin-left: auto;
+    padding: 0 10px;
+    gap: 6px;
+}
+
+.info-saldo {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+    text-align: right;
+}
+
+.saldo {
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.bonus {
+    color: #bbb;
+    font-size: 11px;
+    font-weight: 400;
+}
+
+.botao-deposito {
+    background-color: #4bae8a;
+    color: #000000;
+    padding: 6px 12px; /* Tamanho normal */
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px; /* Tamanho normal */
+    line-height: 1.5; /* Legibilidade */
+    transition: background-color 0.3s ease;
+}
+
+.botao-deposito:hover {
+    background-color: #439978;
+}
+
+/* Estilos para a Div de Depósito */
+.deposito-container {
+    background-color: #241f29;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px 20px 0px; /* Mantido, padding-bottom: 0px */
+    color: #fff;
+    box-sizing: border-box;
+    margin-top: 0px;
+    margin-bottom: 0px; /* Zero margem inferior */
+}
+
+/* Estilos para a Div de Pagamento */
+.Pagamento {
+    background-color: #241f29;
+    width: 100%;
+    border-radius: 14px;
+    border-top: 1px solid #494747;
+    max-width: 600px;
+    margin: 8px auto 0; /* 3px de espaço superior */
+    padding: 0 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80px; /* Mantido */
+    box-sizing: border-box;
+}
+
+.botao-pagamento {
+    background-color: #241f29;
+    color: #fff;
+    border: none;
+    border-radius: 14px;
+    width: 99%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.botao-pagamento:hover {
+    background-color: #2e2835;
+}
+
+.icone-botao {
+    width: 80px;
+    height: 60px;
+    margin-right: 10px;
+    border-radius: 11px;
+}
+
+.deposito-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 11px;
+}
+
+.icone-voltar {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    filter: brightness(0) invert(1);
+}
+
+.icone-voltar:hover {
+    transform: translateX(-3px);
+}
+
+.titulo-deposito {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.subtitulo {
+    font-size: 12px;
+    font-weight: 500;
+    color: #bbb;
+    margin-bottom: 10px;
+    text-align: left;
+}
+/* Menu Fixo */
+.bottom-menu {
+    background-color: #241f29;
+    width: 100%;
+    margin: 0; /* Removido margin para eliminar espaço */
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.menu-items {
+    display: flex;
+    gap: 10px;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    padding: 0 10px;
+}
+
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #F5F7FA;
+    font-size: 12px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0;
+}
+
+.menu-item:first-child {
+    margin-left: 0;
+}
+
+.menu-item-last {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.menu-item:hover {
+    text-decoration: underline;
+}
+
+.menu-icon {
+    margin-bottom: 5px;
+}
+
+.menu-item .cassino-icon {
+    width: 32px !important;
+    height: 32px !important;
+    max-width: 32px !important;
+    max-height: 32px !important;
+    object-fit: contain !important;
+    display: block;
+    margin-bottom: 0px;
+}
+
+.cassino-ao-vivo-icon {
+    width: 38px;
+    height: 38px;
+    max-width: 38px;
+    max-height: 38px;
+    object-fit: contain;
+    display: block;
+    margin-bottom: 0px;
+}
+
+.missao-icon {
+    width: 25px;
+    height: 25px;
+    animation: approachWobble 1.5s infinite ease-in-out;
+}
+
+@keyframes approachWobble {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+    20% {
+        transform: scale(0.8) rotate(0deg);
+    }
+    40% {
+        transform: scale(1.2) rotate(0deg);
+    }
+    50% {
+        transform: scale(1.2) rotate(2deg);
+    }
+    55% {
+        transform: scale(1.2) rotate(-2deg);
+    }
+    60% {
+        transform: scale(1.2) rotate(2deg);
+    }
+    65% {
+        transform: scale(1.2) rotate(0deg);
+    }
+    80% {
+        transform: scale(1.2) rotate(0deg);
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+.promocao-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.esporte-icon {
+    width: 23px;
+    height: 23px;
+    filter: invert(96%) sepia(5%) saturate(200%) hue-rotate(180deg) brightness(105%) contrast(98%) !important;
+}
+
+.menu-icon-custom {
+    width: 24px;
+    height: 24px;
+    filter: invert(96%) sepia(5%) saturate(200%) hue-rotate(180deg) brightness(105%) contrast(98%) !important;
+}
+
+.cassino-text {
+    margin-top: -2px;
+}
+
+.menu-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.0;
+    margin-top: -2px;
+}
+
+.menu-line {
+    display: block;
+    line-height: 1.0;
+}
+
+/* Media Queries relacionadas ao bottom-menu e filhos */
+@media (max-width: 768px) {
+    .bottom-menu {
+        padding: 8px 0;
+        margin: 0; /* Removido margin */
+    }
+    .menu-item {
+        font-size: 11px;
+    }
+    .menu-item .cassino-icon {
+        width: 29px !important;
+        height: 29px !important;
+        max-width: 29px !important;
+        max-height: 29px !important;
+    }
+    .cassino-ao-vivo-icon {
+        width: 34px;
+        height: 34px;
+        max-width: 34px;
+        max-height: 34px;
+    }
+    .missao-icon {
+        width: 23px;
+        height: 23px;
+    }
+    .promocao-icon {
+        width: 22px;
+        height: 22px;
+    }
+    .esporte-icon {
+        width: 21px;
+        height: 21px;
+    }
+    .menu-icon-custom {
+        width: 22px;
+        height: 22px;
+    }
+}
+
+@media (max-width: 414px) {
+    .bottom-menu {
+        padding: 6px 0;
+        margin: 0; /* Removido margin */
+    }
+    .menu-item {
+        font-size: 10px;
+    }
+    .menu-item .cassino-icon {
+        width: 26px !important;
+        height: 26px !important;
+        max-width: 26px !important;
+        max-height: 26px !important;
+    }
+    .cassino-ao-vivo-icon {
+        width: 30px;
+        height: 30px;
+        max-width: 30px;
+        max-height: 30px;
+    }
+    .missao-icon {
+        width: 21px;
+        height: 21px;
+    }
+    .promocao-icon {
+        width: 20px;
+        height: 20px;
+    }
+    .esporte-icon {
+        width: 19px;
+        height: 19px;
+    }
+    .menu-icon-custom {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 360px) {
+    .bottom-menu {
+        padding: 5px 0;
+        margin: 0; /* Removido margin */
+    }
+    .menu-item {
+        font-size: 9px;
+    }
+    .menu-item .cassino-icon {
+        width: 22px !important;
+        height: 22px !important;
+        max-width: 22px !important;
+        max-height: 22px !important;
+    }
+    .cassino-ao-vivo-icon {
+        width: 27px;
+        height: 27px;
+        max-width: 27px;
+        max-height: 27px;
+    }
+    .missao-icon {
+        width: 19px;
+        height: 19px;
+    }
+    .promocao-icon {
+        width: 19px;
+        height: 19px;
+    }
+    .esporte-icon {
+        width: 18px;
+        height: 18px;
+    }
+    .menu-icon-custom {
+        width: 18px;
+        height: 18px;
+    }
+}

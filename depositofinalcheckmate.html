@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Reals bet - Apostas Esportivas, cassino ao vivo e muito mais!</title>
+    <link rel="stylesheet" href="style4.css" />
+    <link rel="shortcut icon" href="favicom.ico" type="image/x-icon">
+</head>
+<body>
+    <header class="login-header">
+        <div class="header-content">
+            <div class="header-left">
+                <span class="titulo-deposito">Depósito</span>
+            </div>
+            <img src="iconex.png" alt="Fechar" class="icone-fechar" onclick="fecharPagina()" />
+        </div>
+        <div class="linha-divisoria"></div>
+    </header>
+
+    <div class="Pagamento">
+        <button class="botao-pagamento">
+            <img src="pix.jpg" alt="Ícone de Pagamento" class="icone-botao">
+            <span>Zrobank</span>
+        </button>
+    </div>
+
+    <input type="number" id="valor-deposito" placeholder="Valor do Pagamento" min="1" step="0.01" required class="input-valor">
+
+    <div class="deposito">
+        <p>DEPOSITO</p>
+    </div>
+
+    <div class="imagem-deposito">
+        <img src="substituir.png" alt="Imagem promocional" class="img-deposito">
+    </div>
+
+    <!-- Pop-up para QR code e chave Pix -->
+    <div class="popup" id="popup-pix">
+        <div class="popup-content">
+            <img src="qrcode.png" alt="QR Code Pix" class="qr-code" id="qr-code-img">
+            <div class="chave-pix">
+                <span id="chave-pix-text">Código Pix será exibido aqui</span>
+                <button class="botao-copiar" onclick="copiarChavePix()">Copiar</button>
+            </div>
+            <button class="botao-fechar" onclick="fecharPopup()">Fechar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

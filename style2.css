@@ -1,0 +1,1161 @@
+* {
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    background-color: #160f20;
+    color: #fff;
+    overflow-x: hidden;
+    width: 100%;
+    min-height: 100vh; /* Garante que o body ocupe a altura total */
+}
+
+.login-header {
+    background-color: #241f29;
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    height: 55px;
+    position: static;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 0 10px;
+    margin-bottom: 3px; /* Reduzido para 3px */
+}
+
+.header-logo {
+    max-height: 70px;
+    max-width: 240px;
+    width: auto;
+}
+
+.saldo-container {
+    background-color: #160f20;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+    margin-left: auto;
+    padding: 0 10px;
+    gap: 6px;
+}
+
+.info-saldo {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+    text-align: right;
+}
+
+.saldo {
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.bonus {
+    color: #bbb;
+    font-size: 11px;
+    font-weight: 400;
+}
+
+.botao-deposito {
+    background-color: #4bae8a;
+    color: #000000;
+    padding: 6px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+    transition: background-color 0.3s ease;
+}
+
+.botao-deposito:hover {
+    background-color: #439978;
+}
+
+.banner-container {
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+    height: 200px;
+    border-radius: 8px;
+    padding: 0 10px;
+    margin-top: 3px; /* Reduzido para 3px */
+}
+
+.banner-slider {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.banner-img {
+    min-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.ganhos-container {
+    width: 100%;
+    margin: 10px 0;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #241f29;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.ganhos-slider {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 70px;
+    position: relative;
+}
+
+.ganho-item {
+    width: 100%;
+    height: 70px;
+    background-color: #493e51;
+    border-radius: 6px;
+    display: flex;
+    overflow: hidden;
+    color: #f0f0f0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    position: absolute;
+    top: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+}
+
+.ganho-item.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.ganho-item.leaving {
+    transform: translateY(-70px);
+    opacity: 0;
+}
+
+.ganho-item img {
+    width: 20%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px 0 0 6px;
+    flex-shrink: 0;
+}
+
+.ganho-item .texto {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: left;
+    flex: 1;
+    padding-left: 8px;
+    padding-right: 8px;
+    box-sizing: border-box;
+}
+
+.ganho-item .parabens {
+    font-size: 13px;
+    font-weight: 400;
+    margin-top: 4px;
+    margin-bottom: 0;
+    white-space: nowrap;
+    opacity: 0.8;
+}
+
+.ganho-item .id-valor {
+    font-size: 14px;
+    font-weight: 700;
+    font-family: monospace;
+    margin: 2px 0;
+    white-space: nowrap;
+    opacity: 1;
+    color: #f8f8f8;
+}
+
+.ganho-item .nome-jogo {
+    font-size: 12px;
+    font-weight: 400;
+    margin-bottom: 4px;
+    white-space: nowrap;
+    opacity: 0.8;
+}
+
+.main-nav {
+    position: relative;
+    width: 100%;
+    margin: 10px 0; /* Aumentado para dar mais espaço */
+    background-color: #241f29;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    padding: 12px 16px; /* Aumentado padding */
+    box-sizing: border-box;
+    user-select: none;
+}
+
+.nav-scroll {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    gap: 10px; /* Aumentado gap */
+    flex: 1;
+    scrollbar-width: none;
+    padding: 0 10px;
+}
+
+.nav-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.nav-btn {
+    flex: 0 0 auto;
+    padding: 6px 12px; /* Aumentado padding */
+    background-color: #493e51;
+    border: none;
+    border-radius: 18px; /* Aumentado border-radius */
+    color: #ccc9c9;
+    cursor: pointer;
+    white-space: nowrap;
+    font-size: 13px; /* Aumentado font-size */
+    min-width: 70px; /* Aumentado min-width */
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    outline: none;
+}
+
+.nav-btn:hover {
+    background-color: #5a4d66;
+    color: #fff;
+}
+
+.nav-btn:focus {
+    outline: none;
+}
+
+.nav-btn.active {
+    border: 1px solid #9b7eff;
+    background-color: #5a4d66;
+    color: #fff;
+}
+
+.nav-btn-icon {
+    flex: 0 0 auto;
+    padding: 8px 14px; /* Aumentado padding */
+    background-color: #493e51;
+    border: none;
+    border-radius: 18px; /* Aumentado border-radius */
+    color: inherit;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px; /* Aumentado min-width */
+    height: 32px; /* Aumentado height */
+    transition: background-color 0.3s ease;
+    outline: none;
+}
+
+.nav-btn-icon:hover {
+    background-color: #5a4d66;
+    color: inherit;
+}
+
+.nav-btn-icon:focus {
+    outline: none;
+}
+
+.nav-btn-icon.active {
+    border: 1px solid #9b7eff;
+    background-color: #5a4d66;
+    color: inherit;
+}
+
+.icon-lupa svg,
+.icon-estrela svg {
+    width: 16px; /* Aumentado tamanho dos ícones */
+    height: 16px;
+}
+
+.icon-menu {
+    position: relative;
+    width: 14px; /* Aumentado tamanho */
+    height: 12px;
+    display: inline-block;
+}
+
+.icon-menu::before,
+.icon-menu::after,
+.icon-menu span {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 2px; /* Aumentado espessura */
+    background-color: currentColor;
+    border-radius: 1px;
+}
+
+.icon-menu::before {
+    width: 14px;
+    top: 0;
+}
+
+.icon-menu span {
+    width: 11px;
+    top: 5px;
+    display: block;
+}
+
+.icon-menu::after {
+    width: 7px;
+    top: 10px;
+}
+
+main {
+    background-color: #160f20;
+    width: 100%;
+    margin: 0;
+    padding: 20px 10px;
+    box-sizing: border-box;
+    color: #fff;
+    flex: 1; /* Garante que ocupe o espaço restante */
+}
+
+.jogos-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px 8px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.jogo {
+    background-color: #2c2533;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.jogo-item {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.jogo-item img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px 8px 0 0;
+}
+
+.jogo-info {
+    padding: 8px;
+    background-color: #2c2533;
+    border-radius: 0 0 8px 8px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.jogo-nome {
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    text-align: left;
+    width: 100%;
+}
+
+.jogo-provedor {
+    font-size: 12px;
+    font-weight: 400;
+    color: #bbb;
+    margin-top: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    text-align: left;
+    width: calc(100% - 24px);
+}
+
+.jogo-estrela {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.jogo-estrela svg {
+    width: 16px;
+    height: 16px;
+}
+
+.mais-btn {
+    background-color: #4bae8a;
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: none;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    margin: 30px auto 0;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.mais-btn:hover {
+    background-color: #439978;
+}
+
+.info {
+    margin-top: 5px;
+    font-size: 16px;
+    text-align: left;
+    word-break: break-word;
+    padding: 20px;
+}
+
+.age {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00feac;
+    color: #17141a;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 20px auto;
+    user-select: none;
+}
+
+.sponsor {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.sponsor img {
+    max-width: 80px;
+    height: auto;
+    margin-top: 10px;
+}
+
+.logo-cfc {
+    display: block;
+    margin: 10px auto 0 auto;
+    max-width: 80px;
+    height: auto;
+}
+
+.highlight {
+    color: #7d78dd;
+    font-weight: bold;
+}
+
+.sponsor-logos {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.sponsor-logos img {
+    max-width: 150px;
+    height: auto;
+}
+
+.sigma-text {
+    font-size: 14px;
+    margin: 10px auto;
+    text-align: center;
+    word-break: break-word;
+}
+
+.bottom-logos {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.bottom-logos img {
+    max-width: 100px;
+    height: auto;
+}
+
+.contact-box {
+    border: 1px solid #ffffff;
+    padding: 10px 15px;
+    margin: 40px auto 0;
+    text-align: center;
+    font-size: 14px;
+    color: #e9d8d8;
+    border-radius: 0;
+    background-color: transparent;
+    line-height: 1.5;
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    z-index: 9998;
+}
+
+#banner45s {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 12px;
+    box-sizing: border-box;
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    flex-wrap: nowrap;
+    max-width: 90vw;
+    width: 90%;
+    max-height: 80vh;
+}
+
+#banner45s img {
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    border-radius: 12px;
+    object-fit: contain;
+}
+
+.fechar-x {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 36px;
+    font-weight: bold;
+    color: white;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 6px 15px;
+    border-radius: 50%;
+    pointer-events: none;
+    user-select: none;
+    z-index: 10000;
+}
+
+/* Menu Fixo */
+.bottom-menu {
+    background-color: #241f29;
+    width: 100%;
+    margin: 0; /* Removido margin para eliminar espaço */
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.menu-items {
+    display: flex;
+    gap: 10px;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    padding: 0 10px;
+}
+
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #F5F7FA;
+    font-size: 12px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0;
+}
+
+.menu-item:first-child {
+    margin-left: 0;
+}
+
+.menu-item-last {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.menu-item:hover {
+    text-decoration: underline;
+}
+
+.menu-icon {
+    margin-bottom: 5px;
+}
+
+.menu-item .cassino-icon {
+    width: 32px !important;
+    height: 32px !important;
+    max-width: 32px !important;
+    max-height: 32px !important;
+    object-fit: contain !important;
+    display: block;
+    margin-bottom: 0px;
+}
+
+.cassino-ao-vivo-icon {
+    width: 38px;
+    height: 38px;
+    max-width: 38px;
+    max-height: 38px;
+    object-fit: contain;
+    display: block;
+    margin-bottom: 0px;
+}
+
+.missao-icon {
+    width: 25px;
+    height: 25px;
+    animation: approachWobble 1.5s infinite ease-in-out;
+}
+
+@keyframes approachWobble {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+    20% {
+        transform: scale(0.8) rotate(0deg);
+    }
+    40% {
+        transform: scale(1.2) rotate(0deg);
+    }
+    50% {
+        transform: scale(1.2) rotate(2deg);
+    }
+    55% {
+        transform: scale(1.2) rotate(-2deg);
+    }
+    60% {
+        transform: scale(1.2) rotate(2deg);
+    }
+    65% {
+        transform: scale(1.2) rotate(0deg);
+    }
+    80% {
+        transform: scale(1.2) rotate(0deg);
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+.promocao-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.esporte-icon {
+    width: 23px;
+    height: 23px;
+    filter: invert(96%) sepia(5%) saturate(200%) hue-rotate(180deg) brightness(105%) contrast(98%) !important;
+}
+
+.menu-icon-custom {
+    width: 24px;
+    height: 24px;
+    filter: invert(96%) sepia(5%) saturate(200%) hue-rotate(180deg) brightness(105%) contrast(98%) !important;
+}
+
+.cassino-text {
+    margin-top: -2px;
+}
+
+.menu-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.0;
+    margin-top: -2px;
+}
+
+.menu-line {
+    display: block;
+    line-height: 1.0;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .login-header {
+        padding: 0 5px;
+        margin-bottom: 3px; /* Mantido em 3px */
+    }
+    .header-logo {
+        height: 64px;
+        max-width: 220px;
+    }
+    .saldo-container {
+        padding: 0 5px;
+        gap: 5px;
+    }
+    .saldo {
+        font-size: 12px;
+    }
+    .bonus {
+        font-size: 10px;
+    }
+    .botao-deposito {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+    .banner-container {
+        margin-top: 3px; /* Mantido em 3px */
+        padding: 0 5px;
+    }
+    .ganhos-container {
+        margin: 8px 0;
+        padding: 5px 5px;
+    }
+    .main-nav {
+        margin: 8px 0;
+        padding: 10px 14px; /* Aumentado padding */
+    }
+    .nav-scroll {
+        gap: 8px;
+        padding: 0 8px;
+    }
+    .nav-btn {
+        padding: 5px 10px; /* Aumentado padding */
+        font-size: 12px;
+        min-width: 65px; /* Aumentado min-width */
+        border-radius: 16px;
+    }
+    .nav-btn-icon {
+        padding: 6px 12px; /* Aumentado padding */
+        min-width: 36px;
+        height: 28px;
+    }
+    .icon-lupa svg,
+    .icon-estrela svg {
+        width: 14px;
+        height: 14px;
+    }
+    .icon-menu {
+        width: 12px;
+        height: 10px;
+    }
+    .icon-menu::before {
+        width: 12px;
+    }
+    .icon-menu span {
+        width: 9px;
+        top: 4px;
+    }
+    .icon-menu::after {
+        width: 6px;
+        top: 8px;
+    }
+    .bottom-menu {
+        padding: 8px 0;
+        margin: 0; /* Removido margin */
+    }
+    .menu-item {
+        font-size: 11px;
+    }
+    .menu-item .cassino-icon {
+        width: 29px !important;
+        height: 29px !important;
+        max-width: 29px !important;
+        max-height: 29px !important;
+    }
+    .cassino-ao-vivo-icon {
+        width: 34px;
+        height: 34px;
+        max-width: 34px;
+        max-height: 34px;
+    }
+    .missao-icon {
+        width: 23px;
+        height: 23px;
+    }
+    .promocao-icon {
+        width: 22px;
+        height: 22px;
+    }
+    .esporte-icon {
+        width: 21px;
+        height: 21px;
+    }
+    .menu-icon-custom {
+        width: 22px;
+        height: 22px;
+    }
+    .jogos-container {
+        gap: 18px 10px;
+    }
+    .jogo-item img {
+        height: 140px;
+    }
+    .jogo-nome {
+        font-size: 13px;
+    }
+    .jogo-provedor {
+        font-size: 11px;
+    }
+    .mais-btn {
+        padding: 7px 14px;
+        font-size: 13px;
+    }
+    .info {
+        font-size: 14px;
+        padding: 15px;
+    }
+    .sponsor-logos img {
+        max-width: 120px;
+    }
+    .bottom-logos img {
+        max-width: 80px;
+    }
+    .sigma-text {
+        font-size: 12px;
+    }
+    .contact-box {
+        font-size: 12px;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 414px) {
+    .login-header {
+        padding: 0 5px;
+        margin-bottom: 3px; /* Mantido em 3px */
+    }
+    .header-logo {
+        height: 60px;
+        max-width: 200px;
+    }
+    .saldo-container {
+        padding: 0 5px;
+        gap: 4px;
+    }
+    .saldo {
+        font-size: 11px;
+    }
+    .bonus {
+        font-size: 9px;
+    }
+    .botao-deposito {
+        padding: 4px 8px;
+        font-size: 11px;
+    }
+    .banner-container {
+        margin-top: 3px; /* Mantido em 3px */
+        padding: 0 5px;
+    }
+    .ganhos-container {
+        margin: 6px 0;
+        padding: 5px 5px;
+    }
+    .main-nav {
+        margin: 6px 0;
+        padding: 8px 12px; /* Aumentado padding */
+    }
+    .nav-scroll {
+        gap: 6px;
+        padding: 0 6px;
+    }
+    .nav-btn {
+        padding: 4px 8px; /* Aumentado padding */
+        font-size: 11px;
+        min-width: 60px; /* Aumentado min-width */
+        border-radius: 14px;
+    }
+    .nav-btn-icon {
+        padding: 5px 10px; /* Aumentado padding */
+        min-width: 32px;
+        height: 24px;
+    }
+    .icon-lupa svg,
+    .icon-estrela svg {
+        width: 12px;
+        height: 12px;
+    }
+    .icon-menu {
+        width: 10px;
+        height: 8px;
+    }
+    .icon-menu::before {
+        width: 10px;
+    }
+    .icon-menu span {
+        width: 8px;
+        top: 3px;
+    }
+    .icon-menu::after {
+        width: 5px;
+        top: 6px;
+    }
+    .bottom-menu {
+        padding: 6px 0;
+        margin: 0; /* Removido margin */
+    }
+    .menu-item {
+        font-size: 10px;
+    }
+    .menu-item .cassino-icon {
+        width: 26px !important;
+        height: 26px !important;
+        max-width: 26px !important;
+        max-height: 26px !important;
+    }
+    .cassino-ao-vivo-icon {
+        width: 30px;
+        height: 30px;
+        max-width: 30px;
+        max-height: 30px;
+    }
+    .missao-icon {
+        width: 21px;
+        height: 21px;
+    }
+    .promocao-icon {
+        width: 20px;
+        height: 20px;
+    }
+    .esporte-icon {
+        width: 19px;
+        height: 19px;
+    }
+    .menu-icon-custom {
+        width: 20px;
+        height: 20px;
+    }
+    .jogos-container {
+        gap: 16px 8px;
+    }
+    .jogo-item img {
+        height: 130px;
+    }
+    .jogo-nome {
+        font-size: 12px;
+    }
+    .jogo-provedor {
+        font-size: 10px;
+    }
+    .mais-btn {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+    .info {
+        font-size: 13px;
+        padding: 10px;
+    }
+    .sponsor-logos img {
+        max-width: 110px;
+    }
+    .bottom-logos img {
+        max-width: 70px;
+    }
+    .sigma-text {
+        font-size: 11px;
+    }
+    .contact-box {
+        font-size: 11px;
+        padding: 6px;
+    }
+}
+
+@media (max-width: 360px) {
+    .login-header {
+        padding: 0 5px;
+        margin-bottom: 3px; /* Mantido em 3px */
+    }
+    .header-logo {
+        height: 56px;
+        max-width: 180px;
+    }
+    .saldo-container {
+        padding: 0 5px;
+        gap: 3px;
+    }
+    .saldo {
+        font-size: 10px;
+    }
+    .bonus {
+        font-size: 8px;
+    }
+    .botao-deposito {
+        padding: 4px 6px;
+        font-size: 10px;
+    }
+    .banner-container {
+        margin-top: 3px; /* Mantido em 3px */
+        padding: 0 5px;
+    }
+    .ganhos-container {
+        margin: 5px 0;
+        padding: 5px 5px;
+    }
+    .main-nav {
+        margin: 5px 0;
+        padding: 6px 10px; /* Aumentado padding */
+    }
+    .nav-scroll {
+        gap: 5px;
+        padding: 0 5px;
+    }
+    .nav-btn {
+        padding: 3px 6px; /* Aumentado padding */
+        font-size: 10px;
+        min-width: 55px; /* Aumentado min-width */
+        border-radius: 12px;
+    }
+    .nav-btn-icon {
+        padding: 4px 8px; /* Aumentado padding */
+        min-width: 28px;
+        height: 22px;
+    }
+    .icon-lupa svg,
+    .icon-estrela svg {
+        width: 10px;
+        height: 10px;
+    }
+    .icon-menu {
+        width: 9px;
+        height: 7px;
+    }
+    .icon-menu::before {
+        width: 9px;
+    }
+    .icon-menu span {
+        width: 7px;
+        top: 2.5px;
+    }
+    .icon-menu::after {
+        width: 4px;
+        top: 5px;
+    }
+    .bottom-menu {
+        padding: 5px 0;
+        margin: 0; /* Removido margin */
+    }
+    .menu-item {
+        font-size: 9px;
+    }
+    .menu-item .cassino-icon {
+        width: 22px !important;
+        height: 22px !important;
+        max-width: 22px !important;
+        max-height: 22px !important;
+    }
+    .cassino-ao-vivo-icon {
+        width: 27px;
+        height: 27px;
+        max-width: 27px;
+        max-height: 27px;
+    }
+    .missao-icon {
+        width: 19px;
+        height: 19px;
+    }
+    .promocao-icon {
+        width: 19px;
+        height: 19px;
+    }
+    .esporte-icon {
+        width: 18px;
+        height: 18px;
+    }
+    .menu-icon-custom {
+        width: 18px;
+        height: 18px;
+    }
+    .jogos-container {
+        gap: 14px 6px;
+    }
+    .jogo-item img {
+        height: 120px;
+    }
+    .jogo-nome {
+        font-size: 11px;
+    }
+    .jogo-provedor {
+        font-size: 9px;
+    }
+    .mais-btn {
+        padding: 5px 10px;
+        font-size: 11px;
+    }
+    .info {
+        font-size: 12px;
+        padding: 8px;
+    }
+    .sponsor-logos img {
+        max-width: 100px;
+    }
+    .bottom-logos img {
+        max-width: 60px;
+    }
+    .sigma-text {
+        font-size: 10px;
+    }
+    .contact-box {
+        font-size: 10px;
+        padding: 5px;
+    }
+}
